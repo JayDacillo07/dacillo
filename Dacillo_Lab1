@@ -1,0 +1,23 @@
+public class HalfDiamondPattern {
+    public static void main(String[] args) {
+        int n = 5; // Number of rows for the upper part of the half-diamond
+
+        // Loop to print the upper part of the half-diamond
+        for (int i = 1; i <= n; i++) {
+            // Loop to print the numbers in each row
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " "); // Print the numbers with a space
+            }
+            System.out.println(); // Move to the next line after printing each row
+        }
+
+        // Loop to print the lower part of the half-diamond
+        for (int i = n - 1; i >= 1; i--) {
+            // Loop to print the numbers in each row
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " "); // Print the numbers with a space
+            }
+            System.out.println(); // Move to the next line after printing each row
+        }
+    }
+}
