@@ -1,0 +1,54 @@
+// Base class representing a circle
+class Circle {
+    protected double radius;
+
+    // Constructor to initialize the radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Method to calculate the area of the circle (base area)
+    public double calculateBaseArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Derived class representing a cylinder
+class Cylinder extends Circle {
+    private double height;
+
+    // Constructor to initialize the radius and height
+    public Cylinder(double radius, double height) {
+        super(radius);
+        this.height = height;
+    }
+
+    // Method to calculate the area of the cylinder
+    public double calculateArea() {
+        // Area = 2πr^2 + 2πrh
+        double baseArea = super.calculateBaseArea();
+        double lateralSurfaceArea = 2 * Math.PI * radius * height;
+        return 2 * baseArea + lateralSurfaceArea;
+    }
+
+    // Method to calculate the volume of the cylinder
+    public double calculateVolume() {
+        // Volume = πr^2h
+        return Math.PI * radius * radius * height;
+    }
+}
+
+// Main class to test the Cylinder class
+public class Main {
+    public static void main(String[] args) {
+        // Create a Cylinder object
+        Cylinder cylinder = new Cylinder(5.0, 10.0);
+
+        // Calculate and display the area and volume
+        double area = cylinder.calculateArea();
+        double volume = cylinder.calculateVolume();
+
+        System.out.println("Area of the cylinder: " + area);
+        System.out.println("Volume of the cylinder: " + volume);
+    }
+}
